@@ -211,10 +211,14 @@ h1,h2,p{margin:0}
 /* FAQ */
 .faq{background:var(--sand);padding:clamp(72px,8vw,120px) var(--pad-x);display:flex;flex-direction:column;align-items:center;gap:56px}
 .faq .h2{font-size:clamp(38px,4.4vw,60px)}
-.faq__grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:64px;row-gap:40px;width:100%;max-width:1180px;margin:0}
-.faq__item{display:flex;flex-direction:column;gap:10px}
-.faq__item dt{font-size:20px;font-weight:700;line-height:1.3}
-.faq__item dd{margin:0;font-size:17px;line-height:1.55;color:var(--muted)}
+.faq__list{width:100%;max-width:880px;border-top:1px solid #cfc6b9}
+.faq__item{border-bottom:1px solid #cfc6b9}
+.faq__item summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:44px;padding:24px 0;font-size:20px;font-weight:700;line-height:1.3}
+.faq__item summary::-webkit-details-marker{display:none}
+.faq__item summary:hover{color:var(--accent)}
+.faq__icon{flex-shrink:0;transition:transform .25s ease}
+.faq__item[open] .faq__icon{transform:rotate(45deg)}
+.faq__item p{margin:0;padding:0 48px 26px 0;font-size:17px;line-height:1.6;color:var(--muted)}
 
 /* Contact */
 .contact{padding:var(--section-y) var(--pad-x);display:flex;flex-direction:column;align-items:center;gap:48px}
@@ -274,15 +278,16 @@ h1,h2,p{margin:0}
   .hero__actions{flex-direction:column;align-items:stretch;gap:16px}
   .hero__actions .btn{width:100%}
   /* telefony przewijane w bok */
-  .phones{justify-content:flex-start;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-left:calc(var(--pad-x) * -1);margin-right:calc(var(--pad-x) * -1);padding:0 var(--pad-x) 8px;scrollbar-width:none}
+  .phones{width:auto;justify-content:flex-start;overflow-x:auto;overscroll-behavior-x:contain;-webkit-overflow-scrolling:touch;scroll-snap-type:x mandatory;scroll-padding-left:var(--pad-x);gap:14px;margin-left:calc(var(--pad-x) * -1);margin-right:calc(var(--pad-x) * -1);padding:0 var(--pad-x) 8px;scrollbar-width:none}
   .phones::-webkit-scrollbar{display:none}
-  .phone{scroll-snap-align:center}
-  .phone__frame{width:168px;border-radius:30px;padding:7px}
+  .phones::after{content:"";flex:0 0 calc(var(--pad-x) - 14px)}
+  .phone{scroll-snap-align:start}
+  .phone__frame{width:min(62vw,240px);border-radius:32px;padding:7px}
   .phone__frame .media{border-radius:24px;font-size:13px}
   .phone__cap{font-size:11px}
 
   .eyebrow{font-size:12px}
-  .insight__grid,.roles__grid,.offer__card,.about__grid,.faq__grid,.form__grid{grid-template-columns:1fr}
+  .insight__grid,.roles__grid,.offer__card,.about__grid,.form__grid{grid-template-columns:1fr}
   .roles{align-items:stretch;gap:22px}
   .roles__grid{gap:22px}
   .roles p{text-align:left;font-size:16px}
@@ -324,9 +329,8 @@ h1,h2,p{margin:0}
 
   .faq{align-items:stretch;gap:26px}
   .faq .h2{text-align:center}
-  .faq__grid{row-gap:26px}
-  .faq__item dt{font-size:18px}
-  .faq__item dd{font-size:15px}
+  .faq__item summary{font-size:17px;padding:20px 0}
+  .faq__item p{font-size:15px;padding-right:0;padding-bottom:22px}
 
   .contact{padding-left:16px;padding-right:16px;gap:24px}
   .form{border-radius:24px;gap:14px}
@@ -552,7 +556,7 @@ h1,h2,p{margin:0}
         <h2 class="h2" id="about-title">Od lat tworzę content komercyjny.<br><span class="serif">Teraz przenoszę ten warsztat na Wasz ślub.</span></h2>
         <p>Pracując dla marek, nauczyłem się myśleć kadrem, pierwszą sekundą, rytmem i montażem – tym, jak film naprawdę działa w social mediach. Nie nagrywam wszystkiego. Łapię to, co będziecie chcieli oglądać jeszcze sto razy.</p>
         <p>Na weselu jestem obserwatorem, który wchodzi w interakcję tylko wtedy, gdy sytuacja tego wymaga. Spokojny, komunikatywny – i nie przejmuję Waszego dnia.</p>
-        <p class="signature">Rafał</p>
+        <p class="signature">Wedding Social Storytelling</p>
       </div>
     </div>
     <ul class="wrap usp">
@@ -568,14 +572,14 @@ h1,h2,p{margin:0}
   <!-- FAQ -->
   <section class="faq" id="faq" aria-labelledby="faq-title">
     <h2 class="h2" id="faq-title">Zanim zapytacie.</h2>
-    <dl class="faq__grid">
-      <div class="faq__item"><dt>Czy będziesz przeszkadzać fotografowi i filmowcowi?</dt><dd>Nie. Fotograf tworzy zdjęcia, filmowiec film, a ja – Wasz dzień do social mediów. Dopasowuję się do ich pracy.</dd></div>
-      <div class="faq__item"><dt>Czym to się różni od rolek nagranych przez znajomych?</dt><dd>Przyjeżdżam z planem czterech historii, nagrywam dobry dźwięk i montuję gotowe filmy. Znajomi mogą się po prostu bawić.</dd></div>
-      <div class="faq__item"><dt>Czy będziemy musieli pozować?</dt><dd>Nie. Żadnych godzinnych inscenizacji ani powtarzania scen. Naturalność jest na pierwszym miejscu.</dd></div>
-      <div class="faq__item"><dt>Kiedy dostaniemy filmy?</dt><dd>Maksymalnie w 7 dni od ślubu – z jedną serią zmian do każdego filmu.</dd></div>
-      <div class="faq__item"><dt>Gdzie pracujesz?</dt><dd>Śląsk i do około 150 km. Dalsze trasy rozliczamy osobno.</dd></div>
-      <div class="faq__item"><dt>Ile ślubów realizujesz?</dt><dd>Maksymalnie 4 w miesiącu. Dzięki temu każdy dostaje pełną uwagę – przy nagraniu i przy montażu.</dd></div>
-    </dl>
+    <div class="faq__list">
+      <details class="faq__item"><summary>Czy będziesz przeszkadzać fotografowi i filmowcowi?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Nie. Fotograf tworzy zdjęcia, filmowiec film, a ja – Wasz dzień do social mediów. Dopasowuję się do ich pracy.</p></details>
+      <details class="faq__item"><summary>Czym to się różni od rolek nagranych przez znajomych?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Przyjeżdżam z planem czterech historii, nagrywam dobry dźwięk i montuję gotowe filmy. Znajomi mogą się po prostu bawić.</p></details>
+      <details class="faq__item"><summary>Czy będziemy musieli pozować?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Nie. Żadnych godzinnych inscenizacji ani powtarzania scen. Naturalność jest na pierwszym miejscu.</p></details>
+      <details class="faq__item"><summary>Kiedy dostaniemy filmy?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Maksymalnie w 7 dni od ślubu – z jedną serią zmian do każdego filmu.</p></details>
+      <details class="faq__item"><summary>Gdzie pracujesz?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Śląsk i do około 150 km. Dalsze trasy rozliczamy osobno.</p></details>
+      <details class="faq__item"><summary>Ile ślubów realizujesz?<svg class="faq__icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14"/><path d="M5 12h14"/></svg></summary><p>Maksymalnie 4 w miesiącu. Dzięki temu każdy dostaje pełną uwagę – przy nagraniu i przy montażu.</p></details>
+    </div>
   </section>
 
   <!-- CONTACT -->
