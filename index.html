@@ -24,7 +24,7 @@
   "name": "Wedding Social Storytelling",
   "description": "Autorski content ślubny do social mediów – The Wedding Four.",
   "areaServed": "Śląsk i do 150 km",
-  "founder": { "@type": "Person", "name": "Rafał" },
+  "founder": { "@type": "Person", "name": "Rafał Małota" },
   "makesOffer": {
     "@type": "Offer",
     "name": "Wedding Social Day",
@@ -59,7 +59,7 @@
 }
 
 *,*::before,*::after{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:72px;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;scroll-padding-top:80px;-webkit-text-size-adjust:100%}
 body{
   margin:0;
   font-family:var(--sans);
@@ -92,10 +92,10 @@ h1,h2,p{margin:0}
 
 /* Header */
 .site-header{position:sticky;top:0;z-index:50;background:rgba(247,244,239,.86);-webkit-backdrop-filter:saturate(180%) blur(16px);backdrop-filter:saturate(180%) blur(16px);border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px)}
-.site-header__bar{height:60px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--pad-x)}
+.site-header__bar{height:68px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 var(--pad-x)}
 .brand{display:flex;align-items:baseline;gap:12px;color:var(--ink)}
 .brand:hover{text-decoration:none;color:var(--ink)}
-.brand__name{font-family:var(--serif);font-style:italic;font-size:26px;line-height:1;white-space:nowrap}
+.brand__name{font-family:var(--serif);font-style:italic;font-size:36px;line-height:1;white-space:nowrap;letter-spacing:-.01em}
 .brand__tag{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .nav{display:flex;gap:clamp(20px,2.5vw,36px);font-size:14px}
 .nav a{color:var(--ink)}
@@ -269,7 +269,7 @@ h1,h2,p{margin:0}
 /* ---------- Mobile ---------- */
 @media (max-width:720px){
   .brand{flex-direction:column;gap:2px}
-  .brand__name{font-size:21px}
+  .brand__name{font-size:30px}
   .brand__tag{font-size:9px}
   .strip{font-size:13px}
 
@@ -354,8 +354,8 @@ h1,h2,p{margin:0}
 
 <header class="site-header">
   <div class="site-header__bar">
-    <a href="#top" class="brand" aria-label="Wedding Social Storytelling – strona główna">
-      <span class="brand__name">Wedding Social Storytelling</span>
+    <a href="#top" class="brand" aria-label="Rafał Małota – strona główna">
+      <span class="brand__name">Rafał Małota</span>
     </a>
     <nav class="nav" aria-label="Menu główne">
       <a href="#four">The Wedding Four</a>
